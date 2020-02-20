@@ -13,6 +13,7 @@ L = 0 # number of libraries
 D = 0 # number of days
 bookScores = [] # scores of each book
 
+# Corresponding indexes match same library
 libraryNumBooks = []   # 2D array with number of books per library
 librarySignupDays = [] # 2D array with signup days for each library
 libraryShipPerDay = [] # 2D array with books shipped per day for each library
