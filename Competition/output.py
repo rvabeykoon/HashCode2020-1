@@ -1,7 +1,8 @@
 # of libraries
 library_number = 2
 
-print(library_number)
+f = open('output.txt', 'w+')
+f.write("%d\n" % library_number)
 
 # 2D array of library sendoffs
 # First element of each array is Library #
@@ -10,8 +11,8 @@ print(library_number)
 library_arrays = [[1, 3, 5, 2, 3], [0, 5, 0, 1, 2, 3, 4]]
 
 for i in range(library_number):
-    print(library_arrays[i][0], end=' ')
-    print(str(library_arrays[i][1]))
+    f.write("%d " % library_arrays[i][0])
+    f.write("%d\n" % library_arrays[i][1])
     for j in range(2, len(library_arrays[i])):
-        print(library_arrays[i][j], end=' ')
-    print()
+        f.write("%d " % library_arrays[i][j])
+    f.write("\n")
