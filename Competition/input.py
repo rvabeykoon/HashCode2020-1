@@ -13,17 +13,15 @@ L = 0
 D = 0
 bookScores = []
 
-libraryNumBooks = []
-librarySignupDays = []
-libraryShipPerDay = []
-libraryBookIDs = []
+libraryNumBooks = []   # 2D array with number of books per library
+librarySignupDays = [] # 2D array with signup days for each library
+libraryShipPerDay = [] # 2D array with books shipped per day for each library
+libraryBookIDs = []    # 2D array with book IDs for each library
 
 
 # Reading file
 for line in file:
-    line = line.strip()
-    line = line.split(' ')
-
+    line = line.strip().split(' ')
     if line == ['']:
         lineCount += 1
         continue
@@ -38,15 +36,11 @@ for line in file:
         bookScores = line # scores of each book
     else:
         if lineCount % 2 == 0:
-            N = line[0] # number of books in library
-            T = line[1] # number of days to finish library signup
-            M = line[2] # number of books that can be shipped per day
-            libraryNumBooks.append(N)
-            librarySignupDays.append(T)
-            libraryShipPerDay.append(M)
+            libraryNumBooks.append(line[0])   # number of books in library
+            librarySignupDays.append(line[1]) # number of days to finish library signup
+            libraryShipPerDay.append(line[2]) # number of books that can be shipped per day
         else:
-            IDs = line # book IDs
-            libraryBookIDs.append(IDs)
+            libraryBookIDs.append(line) # book IDs
 
     lineCount += 1
 
