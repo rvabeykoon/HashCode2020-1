@@ -8,10 +8,10 @@ filename = 'a_example.txt'
 file = open(filename, 'r')
 lineCount = 0
 
-B = 0
-L = 0
-D = 0
-bookScores = []
+B = 0 # number of different books
+L = 0 # number of libraries
+D = 0 # number of days
+bookScores = [] # scores of each book
 
 libraryNumBooks = []   # 2D array with number of books per library
 librarySignupDays = [] # 2D array with signup days for each library
@@ -29,11 +29,11 @@ for line in file:
     line = list(map(int, line))
     
     if lineCount == 0:
-        B = line[0] # number of different books
-        L = line[1] # number of libraries
-        D = line[2] # number of days
+        B = line[0] 
+        L = line[1] 
+        D = line[2] 
     elif lineCount == 1:
-        bookScores = line # scores of each book
+        bookScores = line 
     else:
         if lineCount % 2 == 0:
             libraryNumBooks.append(line[0])   # number of books in library
